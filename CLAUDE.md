@@ -15,8 +15,8 @@ Writers — novelists, essayists, screenwriters, bloggers working on long-form c
 - **HTML** — single index.html file
 - **CSS** — single style.css file, no preprocessors, no utility frameworks
 - **JavaScript** — minimal, only if needed for interactions (theme preview, smooth scroll). No frameworks.
-- **Fonts** — Google Fonts or self-hosted. Choose a distinctive serif for headings and a clean readable font for body text.
-- **Hosting** — GitHub Pages at **carnelian.app** (custom domain via Cloudflare DNS). No server-side code, no build step.
+- **Fonts** — Nunito Sans (Google Fonts) for body text, tagline, headings, and buttons. Courier New for the page title ("Carnelian") and navbar brand. No serif fonts in use.
+- **Hosting** — GitHub Pages at **carnelianwriter.app** (custom domain via Cloudflare DNS). No server-side code, no build step.
 
 ## Design Principles
 
@@ -27,10 +27,13 @@ Writers — novelists, essayists, screenwriters, bloggers working on long-form c
 
 ## Page Structure
 
+### Navbar
+- Fixed to the top of the page. Left side: Carnelian icon (Carnelian Transparent.png) and "Carnelian" in Courier New, left-aligned with a "Download" link in Nunito Sans (carnelian red). No right-aligned items.
+
 ### Hero Section
-- App name "Carnelian" prominently displayed with a short tagline. Something in the vein of "A calm space for first drafts" or "Write forward, edit later." The tagline should speak to the typewriter mode philosophy without using technical language.
-- A single, large screenshot of the app in use — ideally showing the Parchment or Sepia theme with text visible in the editor. The screenshot should look warm and inviting, not like a code editor.
-- A prominent download button linking to the itch.io page. Label it "Download — free, pay what you like" or similar. Make the free nature clear without being apologetic about it.
+- Two-column layout on desktop: left column has the "Carnelian" heading (Courier New), tagline, description paragraph, and download button — all left-aligned. Right column has the Carnelian Logo v2.png image. On mobile, the logo stacks above the text.
+- Below the two-column area, a full-width screenshot placeholder.
+- A prominent download button linking to the itch.io page. Label it "Download for free" or similar.
 
 ### Features Section
 Three or four key features, each with a screenshot or visual and a short description (two to three sentences max). No bullet points. The features to highlight are:
@@ -52,7 +55,7 @@ Minimal. A link to the GitHub repository (for technical users who find their way
 ## Visual Direction
 
 - **Colour palette:** Warm and earthy. Draw from the app's Parchment theme — soft creams, warm browns, muted gold or amber accents. Avoid bright whites and harsh contrasts. The page should feel like paper, not a screen.
-- **Typography:** A distinctive serif for headings — something with character but not novelty (e.g. Playfair Display, Lora, Crimson Pro). A clean, readable serif or sans-serif for body text. Never use Inter, Roboto, or system fonts.
+- **Typography:** Courier New for the "Carnelian" title and navbar brand name. Nunito Sans (via Google Fonts) for all other text — body, headings, tagline, and buttons. Light weight (300) italic for the tagline, regular (400) for body, semi-bold (600) for buttons and nav links, bold (700) for section headings. Never use Inter, Roboto, or system-only fonts.
 - **Layout:** Generous whitespace. Content centred with a comfortable reading width (max ~720px for text). No sidebar, no grid of cards, no multi-column layouts. The page reads like a document, top to bottom.
 - **Screenshots:** These are the most important visual element. They should be large, high quality, with subtle drop shadows or rounded corners to set them apart from the page background. Show the app with real writing visible — not lorem ipsum.
 - **Animations:** Subtle only. A gentle fade-in on scroll for sections is fine. No parallax, no bouncing elements, no dramatic transitions. The page should feel as calm as the app.
@@ -70,7 +73,7 @@ Placeholder images should be used during development if real screenshots are not
 ## Hosting and Domain
 
 - **Repository:** https://github.com/herny22/carnelian-site.git
-- **Custom domain:** carnelian.app (configured via CNAME file in repo root)
+- **Custom domain:** carnelianwriter.app (configured via CNAME file in repo root)
 - **DNS:** Cloudflare (free plan), all records set to "DNS only" (grey cloud) — do not enable Cloudflare proxy as it conflicts with GitHub Pages SSL.
 - **SSL:** GitHub Pages auto-issues via Let's Encrypt. "Enforce HTTPS" should be enabled in repo Settings > Pages once the certificate is issued.
 - **SEO:** `robots.txt` currently blocks all crawlers (`Disallow: /`). Change to `Allow: /` when the site is ready to go public.

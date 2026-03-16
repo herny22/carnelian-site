@@ -264,7 +264,75 @@ img {
 }
 
 /* ============================================
-   Features
+   Features — split layout
+   ============================================ */
+
+.features-split {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 24px 40px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.features-split-inner {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+
+.features-split-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.feature-block h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--brown);
+}
+
+.feature-block p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+}
+
+.feature-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.features-split-sidebar {
+  flex-shrink: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.features-split-logo {
+  width: 160px;
+  height: auto;
+}
+
+.features-split-download {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--carnelian);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.features-split-download:hover {
+  color: var(--carnelian-hover);
+}
+
+/* ============================================
+   Features — stacked
    ============================================ */
 
 .features {
@@ -392,6 +460,23 @@ img {
     padding: 14px 28px;
     width: 100%;
     max-width: 360px;
+  }
+
+  .features-split-inner {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .features-split-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .features-split-logo {
+    width: 100px;
   }
 
   .feature h2 {
