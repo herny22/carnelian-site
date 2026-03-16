@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.7;
   color: var(--brown);
@@ -41,7 +41,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -93,16 +93,94 @@ img {
 }
 
 /* ============================================
+   Navbar
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 28px;
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--brown);
+}
+
+.navbar-brand:hover {
+  color: var(--brown);
+}
+
+.navbar-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.navbar-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar-download {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--carnelian);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-download:hover {
+  color: var(--carnelian-hover);
+}
+
+/* ============================================
    Hero
    ============================================ */
 
 .hero {
-  text-align: center;
-  padding-top: 100px;
+  text-align: left;
+  padding-top: 130px;
   padding-bottom: 60px;
 }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-logo {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: auto;
+}
+
 .hero h1 {
+  font-family: 'Courier New', Courier, monospace;
   font-size: 3.6rem;
   letter-spacing: 0.02em;
   color: var(--brown);
@@ -110,9 +188,10 @@ img {
 }
 
 .tagline {
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 1.5rem;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.35rem;
   font-style: italic;
+  font-weight: 300;
   color: var(--brown-muted);
   margin-bottom: 28px;
 }
@@ -121,7 +200,7 @@ img {
   font-size: 1.05rem;
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto 36px auto;
+  margin: 0 0 36px 0;
 }
 
 /* ============================================
@@ -130,8 +209,8 @@ img {
 
 .download-button {
   display: inline-block;
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 1.15rem;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--cream);
   background-color: var(--carnelian);
@@ -175,7 +254,7 @@ img {
 .hero-screenshot {
   aspect-ratio: 16 / 9;
   max-width: 720px;
-  margin: 40px auto 0 auto;
+  margin: 40px 0 0 0;
 }
 
 .feature-screenshot {
@@ -277,9 +356,23 @@ img {
     font-size: 17px;
   }
 
+  .navbar {
+    padding: 10px 20px;
+  }
+
   .hero {
-    padding-top: 64px;
+    padding-top: 100px;
     padding-bottom: 40px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hero-logo {
+    width: 160px;
+    order: -1;
   }
 
   .hero h1 {
@@ -329,7 +422,7 @@ img {
   }
 
   .hero {
-    padding-top: 48px;
+    padding-top: 90px;
   }
 
   .download-button {

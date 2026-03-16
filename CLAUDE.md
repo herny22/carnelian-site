@@ -16,7 +16,7 @@ Writers — novelists, essayists, screenwriters, bloggers working on long-form c
 - **CSS** — single style.css file, no preprocessors, no utility frameworks
 - **JavaScript** — minimal, only if needed for interactions (theme preview, smooth scroll). No frameworks.
 - **Fonts** — Google Fonts or self-hosted. Choose a distinctive serif for headings and a clean readable font for body text.
-- **Hosting** — GitHub Pages. No server-side code, no build step.
+- **Hosting** — GitHub Pages at **carnelian.app** (custom domain via Cloudflare DNS). No server-side code, no build step.
 
 ## Design Principles
 
@@ -67,10 +67,18 @@ Screenshots need to be provided as image files in an /images folder. The page sh
 
 Placeholder images should be used during development if real screenshots are not yet available.
 
+## Hosting and Domain
+
+- **Repository:** https://github.com/herny22/carnelian-site.git
+- **Custom domain:** carnelian.app (configured via CNAME file in repo root)
+- **DNS:** Cloudflare (free plan), all records set to "DNS only" (grey cloud) — do not enable Cloudflare proxy as it conflicts with GitHub Pages SSL.
+- **SSL:** GitHub Pages auto-issues via Let's Encrypt. "Enforce HTTPS" should be enabled in repo Settings > Pages once the certificate is issued.
+- **SEO:** `robots.txt` currently blocks all crawlers (`Disallow: /`). Change to `Allow: /` when the site is ready to go public.
+
 ## External Links
 
 - **itch.io download page:** [URL to be provided] — this is where all download buttons point
-- **GitHub repository:** [URL to be provided] — footer link only, not prominent
+- **GitHub repository:** https://github.com/herny22/carnelian-site — footer link only, not prominent
 - **Privacy statement:** can be a separate privacy.html page or a section within the main page
 
 ## Performance and Accessibility
