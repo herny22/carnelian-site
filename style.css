@@ -1,0 +1,348 @@
+/* ============================================
+   Carnelian Landing Page
+   ============================================ */
+
+:root {
+  --cream: #faf5ee;
+  --cream-dark: #f0e8da;
+  --brown: #3e3229;
+  --brown-light: #5c4a36;
+  --brown-muted: #7a6652;
+  --carnelian: #b8432a;
+  --carnelian-hover: #9c3822;
+  --carnelian-light: #d4683e;
+  --link: #4a7a8a;
+  --border: #d6cbba;
+  --text-secondary: #6b5b4b;
+}
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--brown);
+  background-color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--brown);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   Fade-in animation
+   ============================================ */
+
+.section-animate {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   Layout
+   ============================================ */
+
+.hero,
+.features,
+.download,
+.footer {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+
+.hero {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 3.6rem;
+  letter-spacing: 0.02em;
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+
+.tagline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--brown-muted);
+  margin-bottom: 28px;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 36px auto;
+}
+
+/* ============================================
+   Download button
+   ============================================ */
+
+.download-button {
+  display: inline-block;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cream);
+  background-color: var(--carnelian);
+  padding: 16px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(61, 46, 30, 0.15);
+}
+
+.download-button:hover {
+  background-color: var(--carnelian-hover);
+  color: var(--cream);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(61, 46, 30, 0.2);
+}
+
+.download-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(61, 46, 30, 0.15);
+}
+
+/* ============================================
+   Screenshot placeholders
+   ============================================ */
+
+.screenshot-placeholder {
+  background-color: var(--cream-dark);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--brown-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.hero-screenshot {
+  aspect-ratio: 16 / 9;
+  max-width: 720px;
+  margin: 40px auto 0 auto;
+}
+
+.feature-screenshot {
+  aspect-ratio: 16 / 9;
+  max-width: 720px;
+  margin-top: 28px;
+}
+
+/* ============================================
+   Features
+   ============================================ */
+
+.features {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.feature {
+  padding: 48px 0;
+}
+
+.feature + .feature {
+  border-top: 1px solid var(--border);
+}
+
+.feature h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: var(--brown);
+}
+
+.feature-text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 660px;
+}
+
+/* ============================================
+   Download section
+   ============================================ */
+
+.download {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  border-top: 1px solid var(--border);
+}
+
+.download h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.download p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto 32px auto;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  padding-top: 28px;
+  padding-bottom: 36px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--brown-muted);
+}
+
+.footer-content a {
+  color: var(--brown-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+
+.footer-content a:hover {
+  color: var(--brown);
+  text-decoration-color: var(--brown-muted);
+}
+
+.footer-separator {
+  margin: 0 10px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .download-button {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .feature h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature {
+    padding: 36px 0;
+  }
+
+  .features {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .download h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .download-button {
+    max-width: 100%;
+  }
+
+  .footer-separator {
+    display: none;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+}

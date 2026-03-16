@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carnelian — Distraction-free writing</title>
+  <meta name="description" content="Carnelian is a distraction-free writing app with typewriter mode, beautiful themes, and manuscript compilation. Free to download.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero section-animate">
+    <h1>Carnelian</h1>
+    <p class="tagline">A calm, focused writing app for long-form work</p>
+    <p class="hero-description">A calm, distraction-free writing app for people who need to get words on the page before they get lost in revision. Typewriter mode keeps you moving. Themes keep it beautiful. And when you're ready, compile your chapters into a finished manuscript.</p>
+    <a href="#" class="download-button">Download for free</a>
+    <div class="screenshot-placeholder hero-screenshot">
+      <span>Screenshot: Carnelian editor in the default Carnelian theme, with a novel chapter in progress</span>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+
+    <div class="feature section-animate">
+      <div class="feature-text">
+        <h2>Stay in the draft</h2>
+        <p>Typewriter mode locks the cursor to the end of your document. You can only write forward — no going back to fuss with that sentence in paragraph two. It might sound like a constraint, but it's crucial for finishing your draft: write messily, keep going, and finish your first (or final!) draft. Turn on focus mode and everything except the paragraph you're working on fades away. Just you and the sentence in front of you.</p>
+      </div>
+      <div class="screenshot-placeholder feature-screenshot">
+        <span>Screenshot: Typewriter mode and focus mode active, with the current paragraph highlighted and surrounding text dimmed</span>
+      </div>
+    </div>
+
+    <div class="feature section-animate">
+      <div class="feature-text">
+        <h2>Your space, your atmosphere</h2>
+        <p>Whether you prefer a paper-like page or want a dark screen for 3AM writing sessions, Carnelian ships with six built-in themes and supports custom theming. Pick the one that makes you want to sit down and write.</p>
+      </div>
+      <div class="screenshot-placeholder feature-screenshot">
+        <span>Screenshot: Three themes side by side — Carnelian, Dracula, and Mint Choc Chip</span>
+      </div>
+    </div>
+
+    <div class="feature section-animate">
+      <div class="feature-text">
+        <h2>From chapters to manuscript</h2>
+        <p>Write each chapter as its own markdown file. When it's time to pull it all together, open the compile window, choose what to include, and export the whole thing as a single docx or .md document. One click takes you from a folder of scattered chapters to a finished manuscript — ready to share, print, or submit.</p>
+      </div>
+      <div class="screenshot-placeholder feature-screenshot">
+        <span>Screenshot: The compile window with chapter files selected and export options visible</span>
+      </div>
+    </div>
+
+    <div class="feature section-animate">
+      <div class="feature-text">
+        <h2>Local and private</h2>
+        <p>Your files are plain markdown, in ordinary folders on your computer. Carnelian was designed to be simple and focused, with no account linking or wi-fi requirement. Open a folder. Write. That's it.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Download -->
+  <section class="download section-animate">
+    <h2>Ready to write?</h2>
+    <p>Carnelian runs on Mac, Windows, and Linux. It operates on a 'pay what you like' model, with donations supporting continued development.</p>
+    <a href="#" class="download-button">Download Carnelian</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span>&copy; 2026 Henry Sherratt</span>
+      <span class="footer-separator">·</span>
+      <span>Carnelian collects no data. <a href="#">Privacy statement</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Fade-in on scroll using Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.section-animate').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
