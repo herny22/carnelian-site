@@ -252,9 +252,10 @@ img {
 }
 
 .hero-screenshot {
-  aspect-ratio: 16 / 9;
   max-width: 720px;
   margin: 40px 0 0 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(61, 46, 30, 0.12);
 }
 
 .feature-screenshot {
