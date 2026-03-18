@@ -28,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -217,6 +218,7 @@ img {
    ============================================ */
 
 .hero-screenshot {
+  width: 100%;
   max-width: 720px;
   margin: 40px auto 0 auto;
   border-radius: 8px;
