@@ -7,7 +7,7 @@
   <meta name="description" content="Carnelian is a distraction-free writing app with typewriter mode, beautiful themes, and manuscript compilation. Free to download.">
   <meta property="og:title" content="Carnelian — Distraction-free writing">
   <meta property="og:description" content="A calm, distraction-free writing app with typewriter mode, beautiful themes, and manuscript compilation. Free to download.">
-  <meta property="og:image" content="https://carnelianwriter.app/images/Carnelian example 1.png">
+  <meta property="og:image" content="https://carnelianwriter.app/images/Screenshot 1.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://carnelianwriter.app">
   <link rel="icon" type="image/png" href="images/Carnelian Transparent.png">
@@ -33,7 +33,24 @@
     <p class="tagline">A quiet space for focused writing</p>
     <p class="hero-description"><strong>Carnelian</strong> is a calm, distraction-free writing app for people who need to get words on the page before they get lost in revision. <strong>Typewriter</strong> mode keeps you moving. <strong>Themes</strong> keep it beautiful. And when you're ready, <strong>compile</strong> your chapters into a finished manuscript.</p>
     <a href="https://henrysherratt.itch.io/carnelian" class="download-button">Download for free</a>
-    <img src="images/Carnelian example 1.png" alt="Carnelian editor showing a novel chapter in progress" class="hero-screenshot" loading="lazy">
+    <div class="carousel" aria-label="Screenshots of Carnelian">
+      <div class="carousel-track">
+        <img src="images/Screenshot 1.png" alt="Carnelian tutorial in the warm Parchment theme" class="carousel-slide" loading="lazy">
+        <img src="images/Screenshot 2.png" alt="Writing and editing in Carnelian's dark theme" class="carousel-slide" loading="lazy">
+        <img src="images/Screenshot 3.png" alt="Carnelian's theme settings with custom colour options" class="carousel-slide" loading="lazy">
+        <img src="images/Screenshot 4.png" alt="Focus mode dimming everything except the current paragraph" class="carousel-slide" loading="lazy">
+        <img src="images/Screenshot 5.png" alt="Typewriter mode settings with the Parchment theme" class="carousel-slide" loading="lazy">
+        <img src="images/Screenshot 6.png" alt="Compile and export dialog for building a manuscript" class="carousel-slide" loading="lazy">
+      </div>
+      <div class="carousel-dots" role="tablist" aria-label="Screenshot navigation">
+        <button class="carousel-dot active" aria-label="Screenshot 1" aria-selected="true"></button>
+        <button class="carousel-dot" aria-label="Screenshot 2" aria-selected="false"></button>
+        <button class="carousel-dot" aria-label="Screenshot 3" aria-selected="false"></button>
+        <button class="carousel-dot" aria-label="Screenshot 4" aria-selected="false"></button>
+        <button class="carousel-dot" aria-label="Screenshot 5" aria-selected="false"></button>
+        <button class="carousel-dot" aria-label="Screenshot 6" aria-selected="false"></button>
+      </div>
+    </div>
   </section>
 
   <!-- Features -->
@@ -101,7 +118,7 @@
   </footer>
 
   <script>
-    // Fade-in on scroll using Intersection Observer
+    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -109,14 +126,44 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.section-animate').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.section-animate').forEach(el => {
-      observer.observe(el);
-    });
+    // Carousel
+    (function () {
+      const track = document.querySelector('.carousel-track');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.carousel-dot');
+      let current = 0;
+      let interval;
+
+      function goTo(index) {
+        current = ((index % slides.length) + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+          d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        });
+      }
+
+      function startAuto() {
+        interval = setInterval(() => goTo(current + 1), 5000);
+      }
+
+      function stopAuto() {
+        clearInterval(interval);
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
+      });
+
+      const carousel = document.querySelector('.carousel');
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', startAuto);
+
+      startAuto();
+    })();
   </script>
 
 </body>
